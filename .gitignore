@@ -1,0 +1,77 @@
+# .NET
+**/bin/
+**/obj/
+*.user
+*.suo
+*.log
+.vs/
+TestResults/
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+*.tsbuildinfo
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local configuration
+appsettings.Local.json
+.env
+
+# >>> MioDesk secure GitHub rules >>>
+# MioDesk local secrets and environment files
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+**/appsettings.Development.json
+**/appsettings.Local.json
+**/appsettings.Production.json
+**/appsettings.*.local.json
+**/secrets.json
+**/secrets.*.json
+*.pfx
+*.p12
+*.pem
+*.key
+
+# Dependencies and generated output
+**/node_modules/
+**/dist/
+**/build/
+**/bin/
+**/obj/
+**/coverage/
+**/TestResults/
+
+# IDE and local machine files
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Local patches, logs and operating system files
+.patch-backups/
+*.log
+*.tmp
+*.temp
+*.bak
+*.backup
+*.orig
+*.rej
+.DS_Store
+Thumbs.db
+desktop.ini
+# <<< MioDesk secure GitHub rules <<<
