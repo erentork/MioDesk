@@ -1,0 +1,21 @@
+services:
+  database:
+    image: postgres:16-alpine
+    container_name: miodesk-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: miodesk
+      POSTGRES_USER: miodesk
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    ports:
+      - "5434:5432"
+    volumes:
+      - miodesk-postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U miodesk -d miodesk"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+
+volumes:
+  miodesk-postgres-data:
