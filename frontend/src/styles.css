@@ -2444,7 +2444,7 @@ input[type="range"] { accent-color:var(--pink-strong); padding:0; }
 
 /* MioDesk achievements: start */
 .achievements-section {
-  margin-top: 24px;
+  margin-top: 0;
   padding: 22px;
   border: 1px solid rgba(211, 182, 176, .72);
   border-radius: 28px;
@@ -6908,17 +6908,6 @@ body
   padding: 25px;
   position: relative;
   overflow: hidden;
-}
-
-.account-settings::after {
-  content: "✿";
-  position: absolute;
-  right: 24px;
-  bottom: 14px;
-  color: rgba(242, 139, 166, .1);
-  font-size: 70px;
-  line-height: 1;
-  pointer-events: none;
 }
 
 .account-settings-heading {
