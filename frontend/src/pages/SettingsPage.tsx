@@ -213,12 +213,6 @@ export function SettingsPage() {
         </div>
       </section>
 
-      <section className="panel settings-about">
-        <div><span className="eyebrow">MioDesk</span><h2>Hakkında</h2></div>
-        <p>MioDesk v1.0 — akademik planlama, görev takibi ve odak yönetimi.</p>
-        <p className="muted">Tasarım sistemi, ikonlar ve maskot bu proje için özgün olarak hazırlanmıştır.</p>
-      </section>
-
       <AchievementsPanel />
     </div>
   );

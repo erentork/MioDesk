@@ -3033,7 +3033,7 @@ div:has(> .settings-secret-sakura-layer) {
  * hesaplanır. Sayfa kaydırıldığında çiçekler de içerikle birlikte hareket eder.
  */
 .settings-secret-sakura-1 {
-  top: 12%;
+  top: calc(12% - 30px);
   right: 22px;
 }
 
@@ -3050,7 +3050,7 @@ div:has(> .settings-secret-sakura-layer) {
 
 @media (max-width: 780px) {
   .settings-secret-sakura-1 {
-    top: 10%;
+    top: calc(10% - 18px);
     right: 10px;
   }
 
@@ -7054,24 +7054,6 @@ body
   cursor: not-allowed;
 }
 
-.settings-about {
-  display: grid;
-  grid-template-columns: minmax(170px, .7fr) 1fr 1.2fr;
-  align-items: center;
-  gap: 20px;
-  padding: 20px 24px;
-}
-
-.settings-about h2,
-.settings-about p {
-  margin: 0;
-}
-
-.settings-about p {
-  font-size: 12px;
-  line-height: 1.55;
-}
-
 @media (max-width: 1180px) {
   .account-settings-grid {
     grid-template-columns: 1fr 1fr;
@@ -7092,8 +7074,7 @@ body
   }
 
   .account-settings-grid,
-  .password-fields,
-  .settings-about {
+  .password-fields {
     grid-template-columns: 1fr;
   }
 
@@ -7101,9 +7082,6 @@ body
     grid-column: auto;
   }
 
-  .settings-about {
-    gap: 10px;
-  }
 }
 
 /* MioDesk account settings: end */
