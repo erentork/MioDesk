@@ -21,4 +21,22 @@ public sealed class AuthController(IAuthService authService) : ControllerBase
     [HttpGet("me")]
     [Authorize]
     public async Task<ActionResult<UserResponse>> Me() => Ok(await authService.GetMeAsync(User.GetUserId()));
+
+    [HttpPut("profile")]
+    [Authorize]
+    public async Task<ActionResult<AuthResponse>> UpdateProfile(UpdateProfileRequest request) =>
+        Ok(await authService.UpdateProfileAsync(User.GetUserId(), request));
+
+    [HttpPut("email")]
+    [Authorize]
+    public async Task<ActionResult<AuthResponse>> ChangeEmail(ChangeEmailRequest request) =>
+        Ok(await authService.ChangeEmailAsync(User.GetUserId(), request));
+
+    [HttpPut("password")]
+    [Authorize]
+    public async Task<IActionResult> ChangePassword(ChangePasswordRequest request)
+    {
+        await authService.ChangePasswordAsync(User.GetUserId(), request);
+        return NoContent();
+    }
 }

@@ -14,4 +14,6 @@ public sealed class UserRepository(AppDbContext context) : IUserRepository
         context.Users.Add(user);
         await context.SaveChangesAsync();
     }
+
+    public Task SaveChangesAsync() => context.SaveChangesAsync();
 }

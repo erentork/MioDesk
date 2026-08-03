@@ -7,6 +7,7 @@ type AuthContextValue = {
   loading: boolean;
   login: (email: string, password: string) => Promise<void>;
   register: (fullName: string, email: string, password: string, major: string) => Promise<void>;
+  updateUser: (user: User) => void;
   logout: () => void;
 };
 
@@ -38,6 +39,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       tokenStore.set(result.token);
       setUser(result.user);
     },
+    updateUser: setUser,
     logout: () => {
       tokenStore.clear();
       setUser(null);

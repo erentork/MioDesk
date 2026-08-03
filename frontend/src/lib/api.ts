@@ -44,4 +44,10 @@ export const authApi = {
   register: (fullName: string, email: string, password: string, major: string) =>
     api<AuthResponse>("/auth/register", { method: "POST", body: JSON.stringify({ fullName, email, password, major }) }),
   me: () => api<User>("/auth/me"),
+  updateProfile: (fullName: string, major: string) =>
+    api<AuthResponse>("/auth/profile", { method: "PUT", body: JSON.stringify({ fullName, major }) }),
+  changeEmail: (email: string, currentPassword: string) =>
+    api<AuthResponse>("/auth/email", { method: "PUT", body: JSON.stringify({ email, currentPassword }) }),
+  changePassword: (currentPassword: string, newPassword: string) =>
+    api<void>("/auth/password", { method: "PUT", body: JSON.stringify({ currentPassword, newPassword }) }),
 };
